@@ -1,0 +1,28 @@
+{
+  "name": "pkge/php-sdk",
+  "description": "Pkge Business API PHP SDK",
+  "keywords": [
+      "api",
+      "pkge",
+      "pkge.net",
+      "pkge.business",
+      "package tracking"
+  ],
+  "authors": [
+    {
+      "name": "pkge.net",
+      "email": "business@pkge.net"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=5.4",
+    "guzzlehttp/guzzle": "^7.3.0",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Pkge\\": "src/"
+    }
+  }
+}
