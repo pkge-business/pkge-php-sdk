@@ -67,6 +67,26 @@ $api->packages;
 ```
 All available endpoints methods see in [\Pkge\Endpoints\Packages::class](src/Endpoints/Packages.php)
 
+## Webhooks
+For handle webhook notifications use [`\Pkge\Webhook::class`](src/Webhook.php).
+Example:
+```php
+$webhook = new \Pkge\Webhook('WEBHOOK_SECRET');
+
+try {
+    $event = $webhook->handleEvent(
+        file_get_contents("php://input"),
+        $_SERVER['HTTP_PKGE_WEBHOOK_SIGNATURE']
+    );
+} catch (\Pkge\Exceptions\WebhookSignatureException $e) {
+    die ($e->getMessage());
+}
+
+// Package entity
+$updatedPackage = $event->payload;
+
+```
+
 ## Exceptions
 
 In some cases, exceptions may occur when making API requests via the SDK. Their description is given below. For more information about what exceptions a particular method can throw, see the PHPDoc comments on this method.
