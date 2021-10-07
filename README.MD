@@ -82,7 +82,7 @@ try {
     die ($e->getMessage());
 }
 
-// Package entity
+/** @var \Pkge\Entities\Package $updatedPackage */
 $updatedPackage = $event->payload;
 
 ```
